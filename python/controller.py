@@ -1,10 +1,13 @@
 import weather
 import asyncio
 from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+cors = CORS(app)
 
 @app.route('/weather/<city>/now', methods=['GET'])
+@cross_origin()
 def get_weather_now(city):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
