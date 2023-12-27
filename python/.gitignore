@@ -1,4 +1,10 @@
-# PYTHON IGNORE PACKAGES
-./__pycache__
-./.idea
-./venv
+# Python specific
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# IDE-specific files
+.idea/
+.vscode/
