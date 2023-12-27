@@ -1,0 +1,4 @@
+# PYTHON IGNORE PACKAGES
+./__pycache__
+./.idea
+./venv
