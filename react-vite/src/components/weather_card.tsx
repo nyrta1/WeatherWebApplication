@@ -12,9 +12,6 @@ export default function WeatherCard() {
     const fetchData = async () => {
         try {
           const response = await fetch(`http://127.0.0.1:5000/weather/${cityName}/now`);
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
           const data = await response.json();
           setWeatherInfo(data);
         } catch (error) {

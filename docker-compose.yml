@@ -1,0 +1,18 @@
+version: '3.0'
+
+services:
+  python:
+    container_name: python-server
+    build:
+      context: ./python
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+
+  react:
+    container_name: react-app
+    build:
+      context: ./react-vite
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
