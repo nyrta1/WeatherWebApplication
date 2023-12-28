@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { WeatherData } from '../models/WeatherData';
 
 export default function WeatherCard() {
@@ -21,46 +21,62 @@ export default function WeatherCard() {
 
     return (
         <>
-            <div className="container py-5 h-100">
-                <div className="row d-flex justify-content-center align-items-center h-100">
-                    <div className="col-md-10 col-lg-8 col-xl-6">
-                        <div className="mb-3">
-                            <label htmlFor="cityName" className="form-label">
-                                City Name
-                            </label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="cityName"
-                                value={cityName || ''}
-                                onChange={getCityNameFromInput}
-                            />
-                        </div>
-                        <button type="button" className="btn btn-primary" onClick={fetchData}>
-                            Submit
-                        </button>
-                        {weatherInfo && (
-                            <div className="card bg-dark text-white mt-3">
-                                <div className="bg-image">
-                                    <img
-                                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/draw1.webp"
-                                        className="card-img"
-                                        alt="weather"
-                                    />
-                                    <div className="mask"></div>
+            {/*REFERENCE SITE: https://bbbootstrap.com/snippets/complete-weather-report-search-bar-32715352*/}
+            <div className="container-fluid px-1 px-sm-2 py-5 mx-auto">
+                <div className="row d-flex justify-content-center">
+                    <div className="row card0">
+                        <div className="card1 col-lg-8 col-md-7">
+                            <small>WeatherApp</small>
+                            <div className="text-center">
+                                <img className="image mt-5" src="https://i.imgur.com/M8VyA2h.png" />
+                            </div>
+                            <div className="row px-3 mt-3 mb-3">
+                                <h1 className="large-font mr-3">{weatherInfo?.temperature}°C</h1>
+                                <div className="d-flex flex-column mr-3">
+                                    <h2 className="mt-3 mb-0">{weatherInfo?.city}, {weatherInfo?.country}</h2>
+                                    <small>{weatherInfo?.date}</small>
                                 </div>
-                                <div className="card-img-overlay text-dark p-5">
-                                    <h4 className="mb-0">
-                                        {weatherInfo.city}, {weatherInfo.country}
-                                    </h4>
-                                    <p className="display-2 my-3">{weatherInfo.temperature}°C</p>
-                                    <p className="mb-2">
-                                        Feels Like: <strong>{weatherInfo.feels_like}°C</strong>
-                                    </p>
-                                    <h5>{weatherInfo.description}</h5>
+                                <div className="d-flex flex-column text-center">
+                                    <h3 className="bi bi-brightness-high mt-4"></h3>
+                                    <small>{weatherInfo?.kind}</small>
                                 </div>
                             </div>
-                        )}
+                        </div>
+                        <div className="card2 col-lg-4 col-md-5">
+                            <div className="row px-3">
+                                <input type="text" name="location" placeholder="Another location" className="col-9 mb-5" value={cityName || ''} onChange={getCityNameFromInput} />
+                                <div className="col-2 bi bi-search mb-5 mr-0 text-center" onClick={fetchData}></div>
+                            </div>
+                            <div className="mr-5">
+                                <p>Weather Details</p>
+                                <div className="row px-3">
+                                    <p className="light-text">Feels like</p>
+                                    <p className="ml-auto">{weatherInfo?.feels_like}°C</p>
+                                </div>
+                                <div className="row px-3">
+                                    <p className="light-text">Humidity</p>
+                                    <p className="ml-auto">{weatherInfo?.humidity}%</p>
+                                </div>
+                                <div className="row px-3">
+                                    <p className="light-text">Wind</p>
+                                    <p className="ml-auto">{weatherInfo?.wind_speed} km/h</p>
+                                </div>
+                                <div className="row px-3">
+                                    <p className="light-text">Wind Direction</p>
+                                    <p className="ml-auto">{weatherInfo?.wind_direction}</p>
+                                </div>
+                                <div className="row px-3">
+                                    <p className="light-text">Pressure</p>
+                                    <p className="ml-auto">{weatherInfo?.pressure} atm</p>
+                                </div>
+                                <div className="row px-3">
+                                    <p className="light-text">Rain</p>
+                                    <p className="ml-auto">{weatherInfo?.precipitation}mm</p>
+                                </div>
+
+                                <div className="line mt-3"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
