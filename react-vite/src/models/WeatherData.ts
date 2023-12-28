@@ -1,7 +1,7 @@
 export class WeatherData {
     city: string;
     country: string;
-    date: Date;
+    date: string;
     description: string;
     feels_like: number;
     humidity: number;
@@ -9,18 +9,24 @@ export class WeatherData {
     temperature: number;
     visibility: number;
     wind_speed: number;
+    precipitation: number;
+    wind_direction: string;
+    pressure: number;
   
     constructor(
       city: string,
       country: string,
-      date: Date,
+      date: string,
       description: string,
       feels_like: number,
       humidity: number,
       kind: string,
       temperature: number,
       visibility: number,
-      wind_speed: number
+      wind_speed: number,
+      precipitation: number,
+      wind_direction: string,
+      pressure: number
     ) {
       this.city = city;
       this.country = country;
@@ -32,5 +38,8 @@ export class WeatherData {
       this.temperature = temperature;
       this.visibility = visibility;
       this.wind_speed = wind_speed;
+      this.precipitation = precipitation;
+      this.wind_direction = wind_direction;
+      this.pressure = pressure;
     }
   }

@@ -4,7 +4,7 @@ import './App.css'
 export default function App() {
   return (
     <>
-      <div className="vh-100">
+      <div>
         <WeatherCard/>
       </div>
     </>

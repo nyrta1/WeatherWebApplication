@@ -21,6 +21,9 @@ def get_weather_now(city):
         "visibility": result.current.visibility,
         "date": result.current.date,
         "description": result.current.description,
+        "precipitation": result.current.precipitation,
+        "wind_direction": result.current.wind_direction.value,
+        "pressure": result.current.pressure,
         "kind": str(result.current.kind),
         "city": result.nearest_area.name,
         "country": result.nearest_area.country
