@@ -1,0 +1,13 @@
+# Ignore typical JavaScript/TypeScript files and directories
+node_modules/
+dist/
+.build/
+
+# Ignore environment-specific settings and caches
+.env
+.cache/
+yarn-error.log
+yarn-debug.log*
+
+# Ignore project-specific files
+*.log

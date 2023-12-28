@@ -1,0 +1,14 @@
+# Ignore typical Python files and directories
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment-specific settings and caches
+.env
+venv/
+.vscode/
+*.egg-info/
+
+# Ignore project-specific files
+*.log
