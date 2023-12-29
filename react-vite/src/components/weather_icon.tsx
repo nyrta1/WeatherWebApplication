@@ -1,4 +1,6 @@
-export default function WeatherIcon({ kind }: { kind: string }) {
+import { WeatherKindEnums } from "../models/WeatherKindEnums";
+
+export default function WeatherIcon({ kind }: any) {
   let iconClassName = 'bi ';
 
   switch (kind) {
@@ -44,9 +46,6 @@ export default function WeatherIcon({ kind }: { kind: string }) {
     case WeatherKindEnums.HEAVY_SNOW_SHOWERS:
       iconClassName += 'bi-cloud-snow';
       break;
-    case WeatherKindEnums.THUNDERY_SNOW_SHOWERS:
-      iconClassName += 'bi-snow';
-      break;
     case WeatherKindEnums.HEAVY_SHOWERS:
       iconClassName += 'bi-cloud-rain-heavy';
       break;
@@ -55,7 +54,6 @@ export default function WeatherIcon({ kind }: { kind: string }) {
       break;
     default:
       iconClassName += 'bi-question';
-      break;
   }
 
   return (

@@ -11,9 +11,52 @@ body {
 }
 
 .card1 {
-    background-image: linear-gradient(#2196F3, #81D4FA);
     padding: 30px 20px 30px 50px;
 }
+
+.weather-sunny {
+    background-image: linear-gradient(#2196F3, #81D4FA);
+    
+}
+
+.weather-partly-cloudy {
+    background-image: linear-gradient(#B3E5FC, #E3F2FD);
+}
+
+.weather-cloudy {
+    background-image: linear-gradient(#9E9E9E, #E0E0E0);
+}
+
+.weather-very-cloudy {
+    background-image: linear-gradient(#757575, #BDBDBD);
+}
+
+.weather-fog {
+    background-image: linear-gradient(#B0BEC5, #CFD8DC);
+    color: black;
+}
+
+.weather-light-showers,
+.weather-light_sleet_showers,
+.weather-light_sleet,
+.weather-thundery-showers,
+.weather-light-rain,
+.weather-heavy-showers,
+.weather-heavy-rain,
+.weather-thundery-heavy-rain {
+    background-image: linear-gradient(#90A4AE, #B0BEC5);
+}
+
+.weather-light-snow,
+.weather-heavy-snow,
+.weather-light-snow-showers,
+.weather-heavy-snow-showers,
+.weather-thundery-snow-showers {
+    background-image: linear-gradient(#E0E0E0, #FFFFFF);
+    color: black;
+
+}
+
 
 .card2 {
     background-color: #607D8B;
