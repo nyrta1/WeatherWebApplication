@@ -20,13 +20,46 @@ export default function WeatherCard() {
         }
     };
 
+    function getLinearGradientColor(kind: string | undefined): string {
+        switch (kind) {
+            case 'Sunny':
+                return 'weather-sunny';
+            case 'Partly cloudy':
+                return 'weather-partly-cloudy';
+            case 'Cloudy':
+                return 'weather-cloudy';
+            case 'Very Cloudy':
+                return 'weather-very-cloudy';
+            case 'Fog':
+                return 'weather-fog';
+            case 'Light Showers':
+            case 'Light Sleet Showers':
+            case 'Light Sleet':
+            case 'Thundery Showers':
+            case 'Light Rain':
+            case 'Heavy Showers':
+            case 'Heavy Rain':
+            case 'Thundery Heavy Rain':
+                return 'weather-light-showers';
+            case 'Light Snow':
+            case 'Heavy Snow':
+            case 'Light Snow Showers':
+            case 'Heavy Snow Showers':
+            case 'Thundery Snow Showers':
+                return 'weather-light-snow';
+            default:
+                return 'weather-sunny';
+        }
+    }
+    
+
     return (
         <>
             {/*REFERENCE SITE: https://bbbootstrap.com/snippets/complete-weather-report-search-bar-32715352*/}
             <div className="container-fluid px-1 px-sm-2 py-5 mx-auto">
                 <div className="row d-flex justify-content-center">
                     <div className="row card0">
-                        <div className="card1 col-lg-8 col-md-7">
+                        <div className={`card1 col-lg-8 col-md-7 ${getLinearGradientColor(weatherInfo?.kind)} `}>
                             <small>WeatherApp</small>
                             <div className="text-center">
                                 <img className="image mt-5" src="https://i.imgur.com/M8VyA2h.png" />
