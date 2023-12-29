@@ -1,0 +1,20 @@
+enum WeatherKindEnums {
+    SUNNY = 'bi-sun',
+    PARTLY_CLOUDY = 'bi-cloud-sun',
+    CLOUDY = 'bi-cloud',
+    VERY_CLOUDY = 'bi-clouds',
+    FOG = 'bi-cloud-fog',
+    LIGHT_SHOWERS = 'bi-cloud-drizzle',
+    LIGHT_SLEET_SHOWERS = 'bi-cloud-drizzle',
+    LIGHT_SLEET = 'bi-cloud-hail',
+    THUNDERY_SHOWERS = 'bi-cloud-lightning-rain',
+    LIGHT_SNOW = 'bi-cloud-snow',
+    HEAVY_SNOW = 'bi-snow',
+    LIGHT_RAIN = 'bi-cloud-drizzle',
+    HEAVY_SHOWERS = 'bi-cloud-rain-heavy',
+    HEAVY_RAIN = 'bi-cloud-rain',
+    LIGHT_SNOW_SHOWERS = 'bi-cloud-snow',
+    HEAVY_SNOW_SHOWERS = 'bi-cloud-snow',
+    THUNDERY_HEAVY_RAIN = 'bi-cloud-lightning-rain',
+    THUNDERY_SNOW_SHOWERS = 'bi-cloud-lightning-snow'
+}

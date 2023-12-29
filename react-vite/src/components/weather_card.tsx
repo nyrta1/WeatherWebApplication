@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { WeatherData } from '../models/WeatherData';
+import WeatherIcon from './weather_icon';
 
 export default function WeatherCard() {
     const [weatherInfo, setWeatherInfo] = useState<WeatherData | null>(null);
@@ -37,7 +38,7 @@ export default function WeatherCard() {
                                     <small>{weatherInfo?.date}</small>
                                 </div>
                                 <div className="d-flex flex-column text-center">
-                                    <h3 className="bi bi-brightness-high mt-4"></h3>
+                                    <WeatherIcon kind={weatherInfo?.kind}></WeatherIcon>
                                     <small>{weatherInfo?.kind}</small>
                                 </div>
                             </div>
@@ -59,7 +60,7 @@ export default function WeatherCard() {
                                 </div>
                                 <div className="row px-3">
                                     <p className="light-text">Wind</p>
-                                    <p className="ml-auto">{weatherInfo?.wind_speed} km/h</p>
+                                    <p className="ml-auto">{(Number((weatherInfo?.wind_speed! / 3.6).toFixed(1)))} m/s</p>
                                 </div>
                                 <div className="row px-3">
                                     <p className="light-text">Wind Direction</p>
@@ -73,7 +74,6 @@ export default function WeatherCard() {
                                     <p className="light-text">Rain</p>
                                     <p className="ml-auto">{weatherInfo?.precipitation}mm</p>
                                 </div>
-
                                 <div className="line mt-3"></div>
                             </div>
                         </div>
